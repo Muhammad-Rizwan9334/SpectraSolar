@@ -1,12 +1,15 @@
-import { View, Image } from 'react-native';
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Login from '../Screens/Login';
 import Splash from '../Screens/Splash';
-import Home from '../Screens/Home';
+import BottomTabNavigator from './BottomTabNavigator';
+import Checklist from './Checklist';
+import ChecklistSecurity from '../Screens/ChecklistSecurity';
+import CustomBottomSheet from '../Screens/CustomBottomSheet';
 
 const Stack = createNativeStackNavigator();
+
 const AppNavigator = () => {
   return (
     <NavigationContainer>
@@ -14,16 +17,50 @@ const AppNavigator = () => {
         <Stack.Screen
           name="Splash"
           component={Splash}
-          options={{ headerShown: false }}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="Login"
           component={Login}
           options={{
-            headerShown:false
+            headerShown: false,
           }}
         />
-        <Stack.Screen name="Home" component={Home}/>
+        <Stack.Screen
+          name="Home"
+          component={BottomTabNavigator}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Checklist"
+          component={Checklist}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="ChecklistSecurity"
+          component={ChecklistSecurity}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="CustomBottomsheet"
+          component={CustomBottomSheet}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Documents"
+          component={BottomTabNavigator}
+          options={{
+            headerShown: false,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
