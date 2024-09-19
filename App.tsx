@@ -1,12 +1,14 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler'; // Import GestureHandlerRootView
+import AppNavigator from './src/Navigation/AppNavigator';
 
 const App = () => {
   return (
-    <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
-      <Text style={{fontSize:25}}>App</Text>
-    </View>
-  )
-}
+    // Wrap AppNavigator inside GestureHandlerRootView
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <AppNavigator />
+    </GestureHandlerRootView>
+  );
+};
 
-export default App
+export default App;
