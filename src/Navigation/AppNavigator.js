@@ -7,6 +7,8 @@ import BottomTabNavigator from './BottomTabNavigator';
 import Checklist from './Checklist';
 import ChecklistSecurity from '../Screens/ChecklistSecurity';
 import CustomBottomSheet from '../Screens/CustomBottomSheet';
+import Media from '../Screens/Media';
+import MediaList from '../Screens/Media';
 
 const Stack = createNativeStackNavigator();
 
@@ -57,6 +59,13 @@ const AppNavigator = () => {
         <Stack.Screen
           name="Documents"
           component={BottomTabNavigator}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Media"
+          component={Media}
           options={{
             headerShown: false,
           }}
